@@ -1,0 +1,1 @@
+export { AmountRUB } from './AmountRUB';

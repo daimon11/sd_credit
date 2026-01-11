@@ -15,6 +15,7 @@ export const webpackBase: webpack.Configuration = {
       '@api': path.resolve(__dirname, '../src/api'),
       '@types': path.resolve(__dirname, '../src/types'),
       '@hooks': path.resolve(__dirname, '../src/hooks'),
+      'domrf-ui': path.resolve(__dirname, '../src/domrf-ui'),
     },
   },
   module: {
@@ -51,7 +52,21 @@ export const webpackBase: webpack.Configuration = {
               },
             },
           },
-          'sass-loader',
+          {
+            loader: 'resolve-url-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              sassOptions: {
+                includePaths: [path.resolve(__dirname, '../node_modules')],
+              },
+            },
+          },
         ],
       },
       {

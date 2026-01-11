@@ -4,5 +4,11 @@ import { bffApiUrls } from '../../apiUrls';
 export const clientApi = createApi({
   reducerPath: 'clientApi',
   baseQuery: fetchBaseQuery({ baseUrl: bffApiUrls.salary }),
-  endpoints: () => ({}),
+  endpoints: (builder) => ({
+    getUserInfo: builder.query<any, void>({
+      query: () => '/user-info',
+    }),
+  }),
 });
+
+export const { useGetUserInfoQuery } = clientApi;

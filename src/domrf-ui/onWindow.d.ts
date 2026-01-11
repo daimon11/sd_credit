@@ -1,0 +1,1 @@
+// Window type declarations

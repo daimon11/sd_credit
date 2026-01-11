@@ -4,5 +4,11 @@ import { bffApiUrls } from '../../apiUrls';
 export const filesApi = createApi({
   reducerPath: 'filesApi',
   baseQuery: fetchBaseQuery({ baseUrl: bffApiUrls.salary }),
-  endpoints: () => ({}),
+  endpoints: (builder) => ({
+    getTemplateSalatyFile: builder.query<any, void>({
+      query: () => '/template-salaty-file',
+    }),
+  }),
 });
+
+export const { useLazyGetTemplateSalatyFileQuery } = filesApi;

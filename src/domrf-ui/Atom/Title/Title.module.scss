@@ -1,0 +1,18 @@
+@import '../../index.scss';
+
+.title {
+  margin: 0;
+  padding: 0;
+
+  &_h1 {
+    @include font-medium-44;
+  }
+
+  &_h2 {
+    @include font-medium-32;
+  }
+
+  &_h3 {
+    @include font-medium-24;
+  }
+}

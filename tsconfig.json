@@ -21,6 +21,7 @@
       "@hooks/*": ["src/hooks/*"],
       "@stories/*": ["stories/*"],
       "@mock/*": ["mock/*"],
+      "domrf-ui": ["src/domrf-ui"],
       "react/*": ["node_modules/react/*"],
       "redux/*": ["node_modules/redux/*"]
     }
