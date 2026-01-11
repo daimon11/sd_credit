@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "declarationDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@layout/*": ["src/layout/*"],
+      "@pages/*": ["src/pages/*"],
+      "@redux/*": ["src/redux/*"],
+      "@type/*": ["src/type/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@stories/*": ["stories/*"],
+      "@mock/*": ["mock/*"],
+      "react/*": ["node_modules/react/*"],
+      "redux/*": ["node_modules/redux/*"]
+    }
+  },
+  "include": ["src", "stories", "mock"],
+  "exclude": ["src/**/*.test*"]
+}

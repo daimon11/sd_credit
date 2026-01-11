@@ -1,0 +1,7 @@
+{
+  "plugins": ["@domrf/code-style-react-ts"],
+  "extends": ["./node_modules/@domrf/eslint-plugin-code-style-react-ts"],
+  "rules": {
+    "local-rules/import-order": ["error", { "tsconfigPath": "./tsconfig.json" }]
+  }
+}
