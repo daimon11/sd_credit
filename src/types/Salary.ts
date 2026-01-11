@@ -1,4 +1,13 @@
-export type SalaryStatuses = string;
+export type StatusInTextColors = 'gray' | 'yellow' | 'green' | 'red' | 'blue';
+
+export type SalaryStatuses =
+  | 'DRAFT'
+  | 'FOR_SIGNING'
+  | 'SIGNING'
+  | 'PROCESSING'
+  | 'EXECUTED'
+  | 'REJECTED'
+  | 'WAITING_PAYMENT';
 
 export interface SalaryDataRequestQuery {
   organizationId?: string;
@@ -19,8 +28,12 @@ export interface SalaryDataResponseSuccess {
   }>;
 }
 
-export const STATUS: Record<string, { name: string; color: string }> = {
-  FOR_SIGNING: { name: 'На подпись', color: 'blue' },
-  SIGNED: { name: 'Подписано', color: 'green' },
-  REJECTED: { name: 'Отклонено', color: 'red' },
-};
+export const STATUS: Record<SalaryStatuses, { color: StatusInTextColors; name: string }> = {
+  DRAFT: { color: 'gray', name: 'Черновик' },
+  FOR_SIGNING: { color: 'yellow', name: 'Готов к подписанию' },
+  PROCESSING: { color: 'yellow', name: 'В обработке' },
+  EXECUTED: { color: 'green', name: 'Исполнен' },
+  REJECTED: { color: 'red', name: 'Отклонен' },
+  WAITING_PAYMENT: { color: 'red', name: 'Ожидает платеж' },
+  SIGNING: { color: 'yellow', name: 'Подписание' },
+} as const;

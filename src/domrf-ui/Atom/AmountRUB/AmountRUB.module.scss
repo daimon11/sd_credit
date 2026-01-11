@@ -1,0 +1,37 @@
+@import '@src/index.scss';
+
+$b: amount;
+
+.#{$b} {
+  overflow: hidden;
+  max-width: 448px;
+  color: $grey-284;
+  min-width: 0;
+
+  &__rub {
+    color: $grey-1514;
+  }
+
+  &_no-color-decor {
+    color: inherit;
+  }
+
+  &_no-color-decor {
+    color: inherit;
+  }
+
+  &__ellipsis {
+    display: flex;
+    flex-shrink: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+:global(.tooltip) {
+  .#{$b} * {
+    color: $white-001;
+  }
+}

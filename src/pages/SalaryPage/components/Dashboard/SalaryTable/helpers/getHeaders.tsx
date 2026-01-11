@@ -11,13 +11,11 @@ export function getHeaders(): ColumnDef<SalaryItemDto>[] {
   return [
     {
       Header: ({ table }) => (
-        <div className={styles['table_cell_CHECKBOX']}>
           <Checkbox
             value=""
             checked={table.getIsAllRowsSelected()}
             onClick={() => table.toggleAllRowsSelected()}
           />
-        </div>
       ),
       cell: ({ row }) => (
         <Checkbox

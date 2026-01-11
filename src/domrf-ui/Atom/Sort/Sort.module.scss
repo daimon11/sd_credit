@@ -1,0 +1,20 @@
+@import '@src/index.scss';
+
+.sort {
+  cursor: pointer;
+  display: inline;
+  height: 16px;
+  color: $grey-284;
+
+  &_asc {
+    & path:last-child {
+      stroke: $grey-1514;
+    }
+  }
+
+  &_desc {
+    & path:first-child {
+      stroke: $grey-1514;
+    }
+  }
+}

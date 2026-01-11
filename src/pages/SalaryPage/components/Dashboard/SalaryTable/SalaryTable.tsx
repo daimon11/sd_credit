@@ -52,6 +52,8 @@ const SalaryTable: React.FC<PaymentsTableProps> = ({
     },
   });
 
+  console.log('tableData', tableData);
+
   return (
     <ResizableTableTemplateBase
       tableData={table}

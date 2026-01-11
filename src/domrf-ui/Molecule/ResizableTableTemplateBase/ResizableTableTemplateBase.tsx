@@ -39,65 +39,6 @@ type ResizableTableTemplateBaseProps<T extends Object> = {
   titleGroupClassName?: string;
 };
 
-/**
- * Table template with column resizing, sort icon in header, and loading animation.
- * Для использования необходима библиотека '@tanstack/react-table' (можно импортировать из ui-lib как объект tanstackTable).
- * Для базовой работы требуется передать в хук useReactTable (взять из tanstackTable).
- *
- * @example
- * 1) data - данные для отображения в таблице
- * 2) columns - Настройки для каждого столбца
- * 3) getCoreRowModel и columnResizeMode - значения, которые передаются всегда без изменения
- *
- * @param {TableType<T>} tableData - объект возвращаемый хуком useReactTable
- * @param {boolean} isLoading - флаг загрузки данных
- * @param {(column: string) => 'asc' | 'desc' | null} getTableSort - функция, куда передаётся id заголовка (если был задан) или accessorKey
- * @param {(column: string) => void} setSortField - функция, куда передаётся id заголовка (если был задан) или accessorKey для установки сортировки
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export function ResizableTableTemplateBase<T extends Object>(
   props: ResizableTableTemplateBaseProps<T>
 ): JSX.Element {

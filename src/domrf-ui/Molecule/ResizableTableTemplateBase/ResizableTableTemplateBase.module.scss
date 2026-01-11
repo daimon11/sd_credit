@@ -1,23 +1,197 @@
+@import '@src/index.scss';
+
 .table-wrapper {
-  position: relative;
-  overflow: auto;
-}
-
-.resizable-template {
+  @include custom-scroll($height: 8px);
   width: 100%;
+  overflow-x: auto;
+  font-size: 12px;
+
+  &.font-size-12 {
+    font-size: 12px;
+  }
+
+  &.font-size-14 {
+    font-size: 14px;
+  }
+
+  &.with-result {
+    * {
+      user-select: none;
+      font-size: inherit;
+    }
+  }
+
+  &.loading {
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      pointer-events: all;
+      background: transparent;
+      background: rgba($grey-134, 0.2);
+      backdrop-filter: blur(1.5px);
+      transition: all 0.2s linear;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 420px;
+      transform: skewX(-45deg);
+      animation: flareAnimation;
+      left: -150%;
+      background: linear-gradient(90deg,
+          rgba($green-223, 0.01),
+          rgba($green-223, 0.1),
+          rgba($green-223, 0.01));
+      animation: flareAnimation 2.5s infinite linear;
+    }
+  }
+
+  .resizable-template {
+    table-layout: fixed;
+
+    .resizable-th {
+      padding: 14px 8px;
+      text-align: left;
+      line-height: 16px;
+
+      &::after {
+        display: none;
+      }
+
+      &_sticky-left {
+        position: sticky;
+        left: 0;
+        background-color: white;
+        z-index: 9;
+
+        &_shadow-right {
+          filter: drop-shadow(4px 0px 4px rgba(139, 153, 169, 0.24));
+
+          &>.resizable-th-divider {
+            display: none;
+          }
+        }
+      }
+
+      &_sticky-right {
+        position: sticky;
+        right: 0;
+        background-color: white;
+        z-index: 9;
+
+        &_shadow-left {
+          filter: drop-shadow(-4px 0px 4px rgba(139, 153, 169, 0.24));
+
+          &>.resizable-th-divider {
+            display: none;
+          }
+        }
+      }
+
+      &>.resizable-th-wrapper {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+      }
+
+      &>.resizable-th-divider {
+        position: absolute;
+        right: -2px;
+        z-index: 7;
+        top: 14px;
+
+        &_active:hover {
+          background-color: black;
+          cursor: col-resize;
+
+          * {
+            stroke: black !important;
+          }
+        }
+
+        &_none {
+          display: none;
+        }
+      }
+    }
+  }
+
+  tr:hover>.td-sticky-left {
+    background-color: white;
+  }
+
+  tr:hover>.td-sticky-right {
+    background-color: white;
+  }
+
+  table tr:has(.td-sticky-right:hover, .td-sticky-left:hover) {
+    td:not(.td-sticky-right):not(.td-sticky-left) {
+      background-color: white;
+    }
+  }
+
+  table tr:hover:not(:has(.td-sticky-right:hover, .td-sticky-left:hover)) {
+    td:not(.td-sticky-right):not(.td-sticky-left) {
+      background-color: $grey-114;
+    }
+  }
+
+  .td-sticky-left {
+    position: sticky;
+    left: 0;
+    z-index: 9;
+    background-color: white;
+
+    &_shadow-right::before {
+      content: '';
+      position: absolute;
+      z-index: 8;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 5px;
+      box-shadow: 4px 0px 4px 0px rgba(139, 153, 169, 0.24);
+    }
+  }
+
+  .td-sticky-right {
+    position: sticky;
+    right: 0;
+    background-color: white;
+    z-index: 9;
+
+    &_shadow-left::before {
+      content: '';
+      position: absolute;
+      z-index: 8;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 5px;
+      box-shadow: -4px 0px 4px 0px rgba(139, 153, 169, 0.24);
+    }
+  }
 }
 
-.loading {
-  position: relative;
-  overflow: hidden;
-}
 
-.with-result {
-  // Styles for table with results
-}
 
-@for $i from 10 through 20 {
-  .font-size-#{$i} {
-    font-size: #{$i}px;
+@keyframes flareAnimation {
+  0% {
+    left: -150%;
+  }
+
+  100% {
+    left: 150%;
   }
 }

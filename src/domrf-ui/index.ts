@@ -1,4 +1,4 @@
-export * from './Icons/Icon';
+export * from './Icons/Icon/Icon';
 export * from './StoriesInfo/StoriesInfo';
 export * from './Colors/ColorsPalette';
 export * from './Pages/DVRUTable';
@@ -16,21 +16,8 @@ export * from './Pages';
 export * from './helpers';
 export * from './hooks';
 
-// Types (defined locally, not from @tanstack/react-table)
-export type {
-  ColumnDef,
-  RowSelectionState,
-  SortingState,
-  ColumnPinningState,
-  ColumnOrderState,
-  VisibilityState,
-  TableRow,
-  CellContext,
-} from './types';
-
 // @tanstack/react-table
 export * as tanstackTable from '@tanstack/react-table';
-
 export {
   getExpandedRowModel,
   useReactTable,
@@ -38,6 +25,18 @@ export {
   getSortedRowModel,
   flexRender,
 } from '@tanstack/react-table';
+
+// Types from local definitions (not exported from @tanstack/react-table v8)
+export type {
+  ColumnDef,
+  RowSelectionState,
+  SortingState,
+  ColumnOrderState,
+  VisibilityState,
+  ColumnPinningState,
+  TableRow,
+  CellContext,
+} from './types';
 
 // Table component
 export { ResizableTableTemplateBase } from './Molecule/ResizableTableTemplateBase';

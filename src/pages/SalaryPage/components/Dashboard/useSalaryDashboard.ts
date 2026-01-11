@@ -12,27 +12,27 @@ import {
   Filters,
   resetFilters,
   updateFilters,
-  setPagination,
+  // setPagination,
 } from '@src/redux/SalaryRegistry/SalaryRegistrySlice';
 import { useApiSelector } from '@redux/helpers';
 import { SignVerificationRequestBody } from '@src/types/Sign';
-import {
-  getMappedTabsArray,
-  filtersCountReducer,
-} from '@pages/SalaryPage/components/Dashboard/helpers';
-import {
-  FORCE_OPEN_SIGNING_PAYCONTROL_PARAM,
-  OPEN_SIGNING_PAYCONTROL_MODAL_PARAM,
-} from '@src/components/Signing/components/Submit PayControlModal/consts';
+// import {
+//   getMappedTabsArray,
+//   filtersCountReducer,
+// } from '@pages/SalaryPage/components/Dashboard/helpers';
+// import {
+//   FORCE_OPEN_SIGNING_PAYCONTROL_PARAM,
+//   OPEN_SIGNING_PAYCONTROL_MODAL_PARAM,
+// } from '@src/components/Signing/components/Submit PayControlModal/consts';
 
 import {
   useGetRegistryQuery,
-  useSignVerificationQuery,
-  useGetStatusesCountQuery,
+  // useSignVerificationQuery,
+  // useGetStatusesCountQuery,
 } from '@redux/SalaryRegistry/SalaryRegistryApi';
 import { SalaryDataRequestQuery, SalaryStatuses } from '@src/types/Salary';
 
-import { isErrorForOpenSigningPayControlModal } from '@pages/SalaryPage/helpers/isErrorForOpenSigningPayControlModal';
+// import { isErrorForOpenSigningPayControlModal } from '@pages/SalaryPage/helpers/isErrorForOpenSigningPayControlModal';
 
 import { getHeaders } from '@pages/SalaryPage/components/Dashboard/SalaryTable/helpers/getHeaders';
 import { useSigningActions } from '@src/redux/Signing/SigningSlice';
@@ -45,7 +45,7 @@ export function useSalaryDashboard() {
 
   const dispatch = useDispatch();
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  // const [searchParams, setSearchParams] = useSearchParams();
 
   const { data, filters, isLoading } = useApiSelector(
     (state) => state.salaryRegistry
@@ -70,10 +70,6 @@ export function useSalaryDashboard() {
     });
 
   const rows = useMemo(() => data?.length ? data : mockSalaryCardData, [data, isLoading]);
-
-  console.log('rows', rows);
-  console.log('data', data);
-  console.log('mockSalaryCardData', mockSalaryCardData);
 
   const prevSorting = useRef(sorting);
 
@@ -226,14 +222,3 @@ export function useSalaryDashboard() {
     // tabs,
   };
 }
-
-
-// rows
-// heading
-// isLoading
-// sorting
-// setSorting
-// rowSelection
-//     setRowSelection,
-// salaryDashboardRef
-// scrollTopDashboard

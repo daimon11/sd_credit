@@ -1,79 +1,344 @@
-import { SalaryCardDataResponseSuccess, SalaryCartStatuses } from '@src/types/SalaryCart';
-
-const statuses: SalaryCartStatuses[] = [
-  'DRAFT',
-  'FOR_SIGNING',
-  'SIGNING',
-  'PARTIALLY_SIGNED',
-  'PROCESSING',
-  'EXECUTED',
-  'PARTIALLY_EXECUTED',
-  'REJECTED',
+export const mockSalaryCardData = [
+  {
+    status: 'DRAFT',
+    number: 'REG-000001',
+    date: '2024-01-15',
+    amount: 50000,
+    fileName: 'salary_card_001.pdf',
+    contactPerson: 'Иванов Иван Иванович',
+    contactPhoneNumber: '+7 (999) 123-45-67',
+  },
+  {
+    status: 'FOR_SIGNING',
+    number: 'REG-000002',
+    date: '2024-01-16',
+    amount: 75000,
+    fileName: 'salary_card_002.pdf',
+    contactPerson: 'Петров Петр Петрович',
+    contactPhoneNumber: '+7 (999) 234-56-78',
+  },
+  {
+    status: 'SIGNING',
+    number: 'REG-000003',
+    date: '2024-01-17',
+    amount: 60000,
+    fileName: 'salary_card_003.pdf',
+    contactPerson: 'Сидоров Сергей Сергеевич',
+    contactPhoneNumber: '+7 (999) 345-67-89',
+  },
+  {
+    status: 'WAITING_PAYMENT',
+    number: 'REG-000004',
+    date: '2024-01-18',
+    amount: 80000,
+    fileName: 'salary_card_004.pdf',
+    contactPerson: 'Смирнов Александр Александрович',
+    contactPhoneNumber: '+7 (999) 456-78-90',
+  },
+  {
+    status: 'PROCESSING',
+    number: 'REG-000005',
+    date: '2024-01-19',
+    amount: 55000,
+    fileName: 'salary_card_005.pdf',
+    contactPerson: 'Кузнецов Дмитрий Дмитриевич',
+    contactPhoneNumber: '+7 (999) 567-89-01',
+  },
+  {
+    status: 'EXECUTED',
+    number: 'REG-000006',
+    date: '2024-01-20',
+    amount: 90000,
+    fileName: 'salary_card_006.pdf',
+    contactPerson: 'Попов Андрей Андреевич',
+    contactPhoneNumber: '+7 (999) 678-90-12',
+  },
+  {
+    status: 'WAITING_PAYMENT',
+    number: 'REG-000007',
+    date: '2024-01-21',
+    amount: 65000,
+    fileName: 'salary_card_007.pdf',
+    contactPerson: 'Соколов Михаил Михайлович',
+    contactPhoneNumber: '+7 (999) 789-01-23',
+  },
+  {
+    status: 'REJECTED',
+    number: 'REG-000008',
+    date: '2024-01-22',
+    amount: 70000,
+    fileName: 'salary_card_008.pdf',
+    contactPerson: 'Новиков Алексей Алексеевич',
+    contactPhoneNumber: '+7 (999) 890-12-34',
+  },
+  {
+    status: 'DRAFT',
+    number: 'REG-000009',
+    date: '2024-01-23',
+    amount: 52000,
+    fileName: 'salary_card_009.pdf',
+    contactPerson: 'Волков Владимир Владимирович',
+    contactPhoneNumber: '+7 (999) 901-23-45',
+  },
+  {
+    status: 'FOR_SIGNING',
+    number: 'REG-000010',
+    date: '2024-01-24',
+    amount: 68000,
+    fileName: 'salary_card_010.pdf',
+    contactPerson: 'Лебедев Олег Олегович',
+    contactPhoneNumber: '+7 (999) 012-34-56',
+  },
+  {
+    status: 'SIGNING',
+    number: 'REG-000011',
+    date: '2024-01-25',
+    amount: 72000,
+    fileName: 'salary_card_011.pdf',
+    contactPerson: 'Семенов Николай Николаевич',
+    contactPhoneNumber: '+7 (999) 123-45-78',
+  },
+  {
+    status: 'WAITING_PAYMENT',
+    number: 'REG-000012',
+    date: '2024-01-26',
+    amount: 58000,
+    fileName: 'salary_card_012.pdf',
+    contactPerson: 'Егоров Павел Павлович',
+    contactPhoneNumber: '+7 (999) 234-56-89',
+  },
+  {
+    status: 'PROCESSING',
+    number: 'REG-000013',
+    date: '2024-01-27',
+    amount: 85000,
+    fileName: 'salary_card_013.pdf',
+    contactPerson: 'Павлов Роман Романович',
+    contactPhoneNumber: '+7 (999) 345-67-90',
+  },
+  {
+    status: 'EXECUTED',
+    number: 'REG-000014',
+    date: '2024-01-28',
+    amount: 62000,
+    fileName: 'salary_card_014.pdf',
+    contactPerson: 'Козлов Артем Артемович',
+    contactPhoneNumber: '+7 (999) 456-78-01',
+  },
+  {
+    status: 'WAITING_PAYMENT',
+    number: 'REG-000015',
+    date: '2024-01-29',
+    amount: 78000,
+    fileName: 'salary_card_015.pdf',
+    contactPerson: 'Степанов Игорь Игоревич',
+    contactPhoneNumber: '+7 (999) 567-89-12',
+  },
+  {
+    status: 'REJECTED',
+    number: 'REG-000016',
+    date: '2024-01-30',
+    amount: 54000,
+    fileName: 'salary_card_016.pdf',
+    contactPerson: 'Николаев Виктор Викторович',
+    contactPhoneNumber: '+7 (999) 678-90-23',
+  },
+  {
+    status: 'DRAFT',
+    number: 'REG-000017',
+    date: '2024-02-01',
+    amount: 66000,
+    fileName: 'salary_card_017.pdf',
+    contactPerson: 'Орлов Максим Максимович',
+    contactPhoneNumber: '+7 (999) 789-01-34',
+  },
+  {
+    status: 'FOR_SIGNING',
+    number: 'REG-000018',
+    date: '2024-02-02',
+    amount: 71000,
+    fileName: 'salary_card_018.pdf',
+    contactPerson: 'Андреев Константин Константинович',
+    contactPhoneNumber: '+7 (999) 890-12-45',
+  },
+  {
+    status: 'SIGNING',
+    number: 'REG-000019',
+    date: '2024-02-03',
+    amount: 59000,
+    fileName: 'salary_card_019.pdf',
+    contactPerson: 'Макаров Евгений Евгеньевич',
+    contactPhoneNumber: '+7 (999) 901-23-56',
+  },
+  {
+    status: 'WAITING_PAYMENT',
+    number: 'REG-000020',
+    date: '2024-02-04',
+    amount: 83000,
+    fileName: 'salary_card_020.pdf',
+    contactPerson: 'Никитин Борис Борисович',
+    contactPhoneNumber: '+7 (999) 012-34-67',
+  },
+  {
+    status: 'PROCESSING',
+    number: 'REG-000021',
+    date: '2024-02-05',
+    amount: 57000,
+    fileName: 'salary_card_021.pdf',
+    contactPerson: 'Захаров Григорий Григорьевич',
+    contactPhoneNumber: '+7 (999) 123-45-89',
+  },
+  {
+    status: 'EXECUTED',
+    number: 'REG-000022',
+    date: '2024-02-06',
+    amount: 76000,
+    fileName: 'salary_card_022.pdf',
+    contactPerson: 'Зайцев Федор Федорович',
+    contactPhoneNumber: '+7 (999) 234-56-90',
+  },
+  {
+    status: 'WAITING_PAYMENT',
+    number: 'REG-000023',
+    date: '2024-02-07',
+    amount: 64000,
+    fileName: 'salary_card_023.pdf',
+    contactPerson: 'Соловьев Юрий Юрьевич',
+    contactPhoneNumber: '+7 (999) 345-67-01',
+  },
+  {
+    status: 'REJECTED',
+    number: 'REG-000024',
+    date: '2024-02-08',
+    amount: 69000,
+    fileName: 'salary_card_024.pdf',
+    contactPerson: 'Васильев Тимофей Тимофеевич',
+    contactPhoneNumber: '+7 (999) 456-78-12',
+  },
+  {
+    status: 'DRAFT',
+    number: 'REG-000025',
+    date: '2024-02-09',
+    amount: 61000,
+    fileName: 'salary_card_025.pdf',
+    contactPerson: 'Петухов Степан Степанович',
+    contactPhoneNumber: '+7 (999) 567-89-23',
+  },
+  {
+    status: 'FOR_SIGNING',
+    number: 'REG-000026',
+    date: '2024-02-10',
+    amount: 74000,
+    fileName: 'salary_card_026.pdf',
+    contactPerson: 'Марков Валерий Валерьевич',
+    contactPhoneNumber: '+7 (999) 678-90-34',
+  },
+  {
+    status: 'SIGNING',
+    number: 'REG-000027',
+    date: '2024-02-11',
+    amount: 56000,
+    fileName: 'salary_card_027.pdf',
+    contactPerson: 'Лазарев Эдуард Эдуардович',
+    contactPhoneNumber: '+7 (999) 789-01-45',
+  },
+  {
+    status: 'WAITING_PAYMENT',
+    number: 'REG-000028',
+    date: '2024-02-12',
+    amount: 82000,
+    fileName: 'salary_card_028.pdf',
+    contactPerson: 'Богданов Руслан Русланович',
+    contactPhoneNumber: '+7 (999) 890-12-56',
+  },
+  {
+    status: 'PROCESSING',
+    number: 'REG-000029',
+    date: '2024-02-13',
+    amount: 63000,
+    fileName: 'salary_card_029.pdf',
+    contactPerson: 'Воробьев Даниил Даниилович',
+    contactPhoneNumber: '+7 (999) 901-23-67',
+  },
+  {
+    status: 'EXECUTED',
+    number: 'REG-000030',
+    date: '2024-02-14',
+    amount: 77000,
+    fileName: 'salary_card_030.pdf',
+    contactPerson: 'Федоров Кирилл Кириллович',
+    contactPhoneNumber: '+7 (999) 012-34-78',
+  },
+  {
+    status: 'WAITING_PAYMENT',
+    number: 'REG-000031',
+    date: '2024-02-15',
+    amount: 60000,
+    fileName: 'salary_card_031.pdf',
+    contactPerson: 'Михайлов Антон Антонович',
+    contactPhoneNumber: '+7 (999) 123-45-90',
+  },
+  {
+    status: 'REJECTED',
+    number: 'REG-000032',
+    date: '2024-02-16',
+    amount: 73000,
+    fileName: 'salary_card_032.pdf',
+    contactPerson: 'Белов Денис Денисович',
+    contactPhoneNumber: '+7 (999) 234-56-01',
+  },
+  {
+    status: 'DRAFT',
+    number: 'REG-000033',
+    date: '2024-02-17',
+    amount: 58000,
+    fileName: 'salary_card_033.pdf',
+    contactPerson: 'Комаров Станислав Станиславович',
+    contactPhoneNumber: '+7 (999) 345-67-12',
+  },
+  {
+    status: 'FOR_SIGNING',
+    number: 'REG-000034',
+    date: '2024-02-18',
+    amount: 81000,
+    fileName: 'salary_card_034.pdf',
+    contactPerson: 'Орехов Георгий Георгиевич',
+    contactPhoneNumber: '+7 (999) 456-78-23',
+  },
+  {
+    status: 'SIGNING',
+    number: 'REG-000035',
+    date: '2024-02-19',
+    amount: 67000,
+    fileName: 'salary_card_035.pdf',
+    contactPerson: 'Ефимов Арсений Арсеньевич',
+    contactPhoneNumber: '+7 (999) 567-89-34',
+  },
+  {
+    status: 'WAITING_PAYMENT',
+    number: 'REG-000036',
+    date: '2024-02-20',
+    amount: 75000,
+    fileName: 'salary_card_036.pdf',
+    contactPerson: 'Медведев Леонид Леонидович',
+    contactPhoneNumber: '+7 (999) 678-90-45',
+  },
+  {
+    status: 'PROCESSING',
+    number: 'REG-000037',
+    date: '2024-02-21',
+    amount: 62000,
+    fileName: 'salary_card_037.pdf',
+    contactPerson: 'Григорьев Вячеслав Вячеславович',
+    contactPhoneNumber: '+7 (999) 789-01-56',
+  },
+  {
+    status: 'EXECUTED',
+    number: 'REG-000038',
+    date: '2024-02-22',
+    amount: 84000,
+    fileName: 'salary_card_038.pdf',
+    contactPerson: 'Данилов Родион Родионович',
+    contactPhoneNumber: '+7 (999) 890-12-67',
+  },
 ];
-
-const deliveryTypes: Array<'ORGANIZATION' | 'BANK_OFFICE'> = ['ORGANIZATION', 'BANK_OFFICE'];
-const tariffPlans: Array<'NAMED' | 'UNNAMED' | 'PREMIUM'> = ['NAMED', 'UNNAMED', 'PREMIUM'];
-
-const cities = ['Москва', 'Санкт-Петербург', 'Новосибирск', 'Екатеринбург', 'Казань'];
-const offices = ['Офис 1', 'Офис 2', 'Офис 3', 'Центральный офис', 'Филиал'];
-
-const generateMockData = (): SalaryCardDataResponseSuccess[] => {
-  const mockData: SalaryCardDataResponseSuccess[] = [];
-
-  for (let i = 1; i <= 40; i++) {
-    const status = statuses[Math.floor(Math.random() * statuses.length)];
-    const deliveryType = deliveryTypes[Math.floor(Math.random() * deliveryTypes.length)];
-    const tariffPlan = tariffPlans[Math.floor(Math.random() * tariffPlans.length)];
-    const city = cities[Math.floor(Math.random() * cities.length)];
-    const office = offices[Math.floor(Math.random() * offices.length)];
-
-    const id = `mock-id-${i}`;
-    const organizationId = `org-${Math.floor(Math.random() * 10) + 1}`;
-    const registerNumber = `REG-${String(i).padStart(6, '0')}`;
-    const salaryAgreement = `AGREEMENT-${String(i).padStart(4, '0')}`;
-    const cardsCount = Math.floor(Math.random() * 100) + 1;
-
-    const now = new Date();
-    const sendDate = new Date(now.getTime() - Math.random() * 30 * 24 * 60 * 60 * 1000);
-    const processingDate = status === 'EXECUTED' || status === 'PARTIALLY_EXECUTED' 
-      ? new Date(sendDate.getTime() + Math.random() * 7 * 24 * 60 * 60 * 1000)
-      : null;
-
-    const firstName = ['Иван', 'Петр', 'Сергей', 'Александр', 'Дмитрий', 'Андрей', 'Михаил'][
-      Math.floor(Math.random() * 7)
-    ];
-    const lastName = ['Иванов', 'Петров', 'Сидоров', 'Смирнов', 'Кузнецов', 'Попов', 'Соколов'][
-      Math.floor(Math.random() * 7)
-    ];
-    const phone = `+7 (${Math.floor(Math.random() * 900) + 100}) ${Math.floor(Math.random() * 900) + 100}-${Math.floor(Math.random() * 90) + 10}-${Math.floor(Math.random() * 90) + 10}`;
-
-    mockData.push({
-      id,
-      organizationId,
-      status,
-      registerNumber,
-      salaryAgreement,
-      sendDate: sendDate.toISOString(),
-      cardsCount,
-      cardType: {
-        payment_system: 'MIR',
-        tariff_plan: tariffPlan,
-      },
-      deliveryMethod: {
-        delivery_type: deliveryType,
-        delivery_office: deliveryType === 'BANK_OFFICE' ? office : null,
-        delivery_city: deliveryType === 'BANK_OFFICE' ? city : null,
-      },
-      contactPerson: {
-        fullName: `${firstName} ${lastName}`,
-        phone,
-      },
-      bankComment: Math.random() > 0.7 ? `Комментарий банка для заявки ${i}` : null,
-      processingDate: processingDate ? processingDate.toISOString() : null,
-    });
-  }
-
-  return mockData;
-};
-
-export const mockSalaryCardData: SalaryCardDataResponseSuccess[] = generateMockData();
