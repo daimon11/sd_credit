@@ -72,7 +72,16 @@ declare module 'domrf-ui' {
     [key: string]: any;
   };
   export type ColumnDef<T> = any;
+  export type ColumnPinningState = {
+    left?: string[];
+    right?: string[];
+  };
   export const Checkbox: React.FC<any>;
   export const Status: React.FC<any>;
   export const AmountRUB: React.FC<any>;
+  export const ResizableTableTemplateBase: <T>(props: any) => React.ReactElement;
+  export const tanstackTable: {
+    useReactTable: any;
+    getCoreRowModel: any;
+  };
 }

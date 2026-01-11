@@ -1,28 +1,43 @@
-// Main export file for domrf-ui
+export * from './Icons/Icon';
+export * from './StoriesInfo/StoriesInfo';
+export * from './Colors/ColorsPalette';
+export * from './Pages/DVRUTable';
+export * from './Pages/DVRUViewBox';
+export * from './Pages/SSRTable';
+export * from './Pages/SSRViewBox';
 
-// Atoms
-export { Title } from './Atom/Title';
-export { Button } from './Atom/Button';
-export { Checkbox } from './Atom/Checkbox';
-export { Status } from './Atom/Status';
-export { AmountRUB } from './Atom/AmountRUB';
+export * from './Atom';
+export * from './Molecule';
+export * from './Organism';
+export * from './Layout';
+export * from './Pages';
 
-// Layout
-export { Layout } from './Layout';
+// helpers and hooks
+export * from './helpers';
+export * from './hooks';
 
-// Molecules
-export { BackTop } from './Molecule/BackTop';
-export { Paginator } from './Molecule/Paginator';
-export { NoResults } from './Molecule/NoResults';
+// Types (defined locally, not from @tanstack/react-table)
+export type {
+  ColumnDef,
+  RowSelectionState,
+  SortingState,
+  ColumnPinningState,
+  ColumnOrderState,
+  VisibilityState,
+  TableRow,
+  CellContext,
+} from './types';
 
-// Organisms
-export { SelectOrganizationWrapper } from './Organism/SelectOrganizationWrapper';
+// @tanstack/react-table
+export * as tanstackTable from '@tanstack/react-table';
 
-// Hooks
-export { useNotify } from './hooks/useNotify';
-export { useDashboardFilter } from './hooks/useDashboardFilter';
-export { useNonInitialEffect } from './hooks/useNonInitialEffect';
-export { useOrganizations } from './hooks/useOrganizations';
+export {
+  getExpandedRowModel,
+  useReactTable,
+  getCoreRowModel,
+  getSortedRowModel,
+  flexRender,
+} from '@tanstack/react-table';
 
-// Types
-export type { RowSelectionState, SortingState, ColumnDef } from './types';
+// Table component
+export { ResizableTableTemplateBase } from './Molecule/ResizableTableTemplateBase';

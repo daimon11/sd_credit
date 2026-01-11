@@ -1,0 +1,23 @@
+.table-wrapper {
+  position: relative;
+  overflow: auto;
+}
+
+.resizable-template {
+  width: 100%;
+}
+
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.with-result {
+  // Styles for table with results
+}
+
+@for $i from 10 through 20 {
+  .font-size-#{$i} {
+    font-size: #{$i}px;
+  }
+}

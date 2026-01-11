@@ -1,0 +1,1 @@
+export { ResizableTableHeaders } from './ResizableTableHeaders';

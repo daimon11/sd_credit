@@ -1,0 +1,68 @@
+// Mixins
+@use './_fonts.scss' as *;
+@use './_colors.scss' as *;
+
+// Font mixins
+@mixin font-medium-44 {
+  font-family: $medium;
+  font-size: 44px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+@mixin font-medium-32 {
+  font-family: $medium;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+@mixin font-medium-24 {
+  font-family: $medium;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+@mixin font-medium-16 {
+  font-family: $medium;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+@mixin font-medium-14 {
+  font-family: $medium;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+// Page adaptive mixin
+@mixin page-adaptive {
+  padding: 24px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+// Custom scroll mixin
+@mixin custom-scroll($height: 8px) {
+  &::-webkit-scrollbar {
+    width: $height;
+    height: $height;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $grey-106;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $grey-284;
+    border-radius: 4px;
+
+    &:hover {
+      background: $grey-517;
+    }
+  }
+}

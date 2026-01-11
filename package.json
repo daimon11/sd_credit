@@ -167,6 +167,7 @@
     },
     "dependencies": {
         "@module-federation/enhanced": "^0.3.5",
+        "@popperjs/core": "^2.11.8",
         "@reduxjs/toolkit": "^1.9.5",
         "@sentry/react": "^7.91.0",
         "@sentry/webpack-plugin": "^4.6.1",

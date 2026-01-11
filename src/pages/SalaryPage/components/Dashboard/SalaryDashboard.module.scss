@@ -1,4 +1,93 @@
-@import '@src/index.scss';
+@use '../../../../domrf-ui/assets.scss' as *;
 
-.dashboard {
+.table-wrapper {
+  position: relative;
+  min-height: 575px;
+
+  & > table {
+    min-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  &_no-results {
+    background-color: $grey-106;
+  }
+
+  // Сброс scroll-стилей
+  &::-webkit-scrollbar {
+    width: initial;
+    height: initial;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: 0;
+  }
+
+  thead {
+    background-color: white !important;
+  }
+}
+
+.no-results {
+  @include font-medium-16;
+  text-align: center;
+  color: $grey-284;
+  padding: 104px 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.table {
+  @include custom-scroll($height: 8px);
+  width: 100%;
+  overflow-x: auto;
+}
+
+._th-content {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+._loading {
+  overflow: hidden;
+
+  &::before {
+    pointer-events: all;
+    background: transparent;
+    background: rgba($grey-134, 0.2);
+    backdrop-filter: blur(1.5px);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 420px;
+    transform: skewX(-45deg);
+    left: -150%;
+    background: linear-gradient(
+      90deg,
+      rgba($green-223, 0.01),
+      rgba($green-223, 0.1),
+      rgba($green-223, 0.01)
+    );
+    animation: flare-animation 2.5s infinite linear;
+  }
+}
+
+@keyframes flare-animation {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
 }

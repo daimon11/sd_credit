@@ -36,6 +36,7 @@ import { isErrorForOpenSigningPayControlModal } from '@pages/SalaryPage/helpers/
 
 import { getHeaders } from '@pages/SalaryPage/components/Dashboard/SalaryTable/helpers/getHeaders';
 import { useSigningActions } from '@src/redux/Signing/SigningSlice';
+import { mockSalaryCardData } from '@pages/SalaryPage/components/Dashboard/mockData';
 
 export function useSalaryDashboard() {
   const [scrollTopDashboard, setScrollTopDashboard] = useState(0);
@@ -68,7 +69,11 @@ export function useSalaryDashboard() {
       fieldLocalStorage: 'salary_dashboardFilter',
     });
 
-  const rows = useMemo(() => data ?? [], [data, isLoading]);
+  const rows = useMemo(() => data?.length ? data : mockSalaryCardData, [data, isLoading]);
+
+  console.log('rows', rows);
+  console.log('data', data);
+  console.log('mockSalaryCardData', mockSalaryCardData);
 
   const prevSorting = useRef(sorting);
 

@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'ObjectSans Medium';
+  font-weight: 400;
+  src: local(''), url('./assets/fonts/ObjectSans-Heavy.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'ObjectSans Regular';
+  font-weight: 400;
+  src: local(''), url('./assets/fonts/ObjectSans-Regular.woff2') format('woff2');
+}
+
+$medium: 'ObjectSans Medium', sans-serif;
+$regular: 'ObjectSans Regular', sans-serif;

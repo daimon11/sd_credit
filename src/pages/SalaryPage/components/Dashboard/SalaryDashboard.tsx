@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 import classNames from 'classnames';
 import { FooterPanel } from './FooterPanel/FooterPanel';
 import { FiltersPanelSalary } from './FiltersPanelSalary/FiltersPanelSalary';
-import { SalaryTable } from './SalaryTable/SalaryTable';
+import SalaryTable from './SalaryTable/SalaryTable';
 import { StatusTabs } from './StatusTabs/StatusTabs';
 import { InfoFilters } from './InfoFilters/InfoFilters';
 import styles from './SalaryDashboard.module.scss';

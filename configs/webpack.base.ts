@@ -63,7 +63,10 @@ export const webpackBase: webpack.Configuration = {
             options: {
               sourceMap: true,
               sassOptions: {
-                includePaths: [path.resolve(__dirname, '../node_modules')],
+                includePaths: [
+                  path.resolve(__dirname, '../node_modules'),
+                  path.resolve(__dirname, '../src'),
+                ],
               },
             },
           },
